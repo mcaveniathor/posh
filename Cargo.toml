@@ -1,0 +1,20 @@
+[package]
+name = "posh"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.70"
+log = "0.4.17"
+
+pretty_env_logger = "0.4.0"
+json = "0.12.4"
+[dependencies.reqwest]
+version= "0.11"
+features = ["blocking", "json"]
+
+[dependencies.clap]
+version = "4.1"
+features = ["derive"]
