@@ -16,7 +16,7 @@ struct Args {
     /// An optional search term to include with the brand. e.g. "sandals"
     query: Option<String>,
     #[arg(short,long,default_value_t=100)]
-    ///The number of results to fetch for each page
+    /// The number of results to fetch for each page, maximum 100
     step: usize,
 }
 
@@ -59,7 +59,7 @@ fn count_results(brand: impl AsRef<str>, query: &Option<String>, page: usize, st
     let data_len = parsed_json["data"].len();
     info!("Number of results for page {}: {}", &page, &data_len);
     if data_len == 0 {
-        warn!("Data length 0 found for page {}.", &page);
+        warn!("0 results found for page {}.", &page);
     }
     Ok(data_len)
 }
@@ -70,9 +70,13 @@ fn main() -> Result<()> {
     Ok(())
 }
 fn run(args: Args) -> Result<()> {
+    debug!("Args: {:?}", &args);
     let brand = args.brand;
     let query = args.query;
     let step = args.step;
+    if step > 100 {
+        warn!("Step greater than 100 specified, results will be limited to step size of 100.");
+    }
     let mut page: usize = 1;
     let mut done = false;
     let mut sum = 0;
