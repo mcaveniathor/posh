@@ -26,10 +26,10 @@ RUST_LOG=info cargo run Gucci
 
 ### Specifying step size
 
-If you want to set a different number of results per page than the default 100, you can use the --step argument. Note that you'll need to include -- after cargo run preceding the arguments if using this parameter.
+If you want to set a different number of results per page than the default 100, you can use the --step argument. Note that you'll need to include -- after cargo run preceding the arguments if using this parameter. Note that Poshmark's server caps this at 100 if a value > 100 is used
 
 ```
-RUST_LOG=info cargo run -- -step 500 nike airmax
+RUST_LOG=info cargo run -- -step 50 nike airmax
 ```
 
 
