@@ -20,7 +20,7 @@ Options:
 To get the number of Gucci items listed on Poshmark:
 
 ```
-RUST_LOG=info cargo run Gucci
+cargo run Gucci
 ```
 
 
