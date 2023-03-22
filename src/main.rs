@@ -11,9 +11,12 @@ extern crate json;
 
 #[derive(Parser,Debug)]
 struct Args {
+    /// The brand to be searched for. Use quotation marks if there is a space in the name. e.g "Old Navy"
     brand: String,
+    /// An optional search term to include with the brand. e.g. "sandals"
     query: Option<String>,
     #[arg(short,long,default_value_t=100)]
+    ///The number of results to fetch for each page
     step: usize,
 }
 
