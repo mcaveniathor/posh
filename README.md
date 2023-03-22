@@ -35,7 +35,7 @@ RUST_LOG=info cargo run -- -step 50 nike airmax
 
 ### Logging
 
-If logging is desired, run with the desired value of the RUST\_LOG environment variable (info,debug,trace,warn, or error:
+If logging is desired, run with the desired value of the RUST\_LOG environment variable (info,debug,trace,warn, or error):
 
 ```
 RUST_LOG=debug cargo run "Oscar de la Renta" sweater
