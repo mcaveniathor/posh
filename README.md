@@ -3,6 +3,9 @@
 # Description
 This is a command-line tool which obtains the number of listings for the given brand (and optional query term) from the website Poshmark.
 
+## Note
+Poshmark's API is limited to 5000 results for such a query 
+
 ## Usage
 
 ```
